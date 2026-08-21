@@ -91,7 +91,7 @@ O servidor estará rodando em `http://localhost:3000`.
 
 Determina quais modalidades de empréstimo estão disponíveis para o cliente com base em sua renda, idade e localização.
 
-- **URL:** `POST /customer-loans`
+- **URL:** `POST /cliente_emprestimos`
 - **Headers:** `Content-Type: application/json`
 - **Exemplo de Corpo (Body):**
 
@@ -133,7 +133,7 @@ Determina quais modalidades de empréstimo estão disponíveis para o cliente co
 
 Cadastra um novo cliente no banco de dados.
 
-- **URL:** `POST /customers`
+- **URL:** `POST /clientes`
 - **Headers:** `Content-Type: application/json`
 - **Exemplo de Corpo (Body):**
 
@@ -166,7 +166,7 @@ Cadastra um novo cliente no banco de dados.
 
 Retorna a lista de todos os clientes cadastrados.
 
-- **URL:** `GET /customers`
+- **URL:** `GET /clientes`
 - **Exemplo de Resposta (Status 200 OK):**
 
 ```json
@@ -188,7 +188,7 @@ Retorna a lista de todos os clientes cadastrados.
 
 Busca os dados de um cliente específico pelo seu ID.
 
-- **URL:** `GET /customers/:id`
+- **URL:** `GET /clientes/:id`
 - **Exemplo de Resposta (Status 200 OK):**
 
 ```json
@@ -216,7 +216,7 @@ Busca os dados de um cliente específico pelo seu ID.
 
 Atualiza as informações de um cliente existente.
 
-- **URL:** `PUT /customers/:id`
+- **URL:** `PUT /clientes/:id`
 - **Headers:** `Content-Type: application/json`
 - **Exemplo de Corpo (Body):**
 
@@ -244,7 +244,7 @@ Atualiza as informações de um cliente existente.
 
 Exclui um cliente do banco de dados pelo seu ID.
 
-- **URL:** `DELETE /customers/:id`
+- **URL:** `DELETE /clientes/:id`
 - **Exemplo de Resposta (Status 200 OK):**
 
 ```json
