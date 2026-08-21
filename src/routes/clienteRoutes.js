@@ -1,9 +1,9 @@
 const { Router } = require('express');
-const clienteController = require('../controllers/clienteContoller')
+const clienteController = require('../controllers/clienteController')
 
 const router = Router();
 
-router.post('cliente_emprestimos', clienteController.analisarEmprestimos);
+router.post('/cliente_emprestimos', clienteController.analisarEmprestimos);
 router.post('/clientes', clienteController.criar);
 router.get('/clientes', clienteController.listarTodos);
 router.get('/clientes/:id', clienteController.buscarPorId);

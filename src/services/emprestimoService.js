@@ -1,20 +1,23 @@
-class emprestimoService{
-    static avaliarEmpréstimos({idade, renda, estado}){
-        const emprestimos = [];
-        const emSP = estado && estado.toUpperCase() === 'SP';
+class emprestimoService {
+    static avaliarEmprestimos({ age, income, location }) {
+        const loans = [];
+        const emSP = location && location.toUpperCase() === 'SP';
 
-        const elegivelParaPessoalOuGarantido = renda <= 3000 || (renda > 3000 && renda <= 5000 && idade < 30 && emSP);
+        // Regra Pessoal e Garantido
+        const elegivelParaPessoalOuGarantido = 
+            income <= 3000 || (income > 3000 && income <= 5000 && age < 30 && emSP);
 
         if (elegivelParaPessoalOuGarantido) {
-            emprestimos.push({tipo: 'Pessoal', taxa_de_juros: 4});
-            emprestimos.push({tipo: 'Garantido', taxa_de_juros: 3});
+            loans.push({ type: 'PERSONAL', interest_rate: 4 });
+            loans.push({ type: 'GUARANTEED', interest_rate: 3 });
         }
 
-        if (renda >= 5000) {
-            emprestimos.push({tipo: 'Consignado', taxa_de_juros: 2});
+        // Regra Consignado
+        if (income >= 5000) {
+            loans.push({ type: 'CONSIGNMENT', interest_rate: 2 });
         }
 
-        return emprestimos;
+        return loans;
     }
 }
 
