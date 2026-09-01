@@ -75,6 +75,15 @@ class clienteController {
             return res.status(500).json({ error: error.message });
         }
     }
+
+    static async listarComEmprestimos(req, res) {
+    try {
+        const resultado = await clienteService.buscarClientesComEmprestimos();
+        return res.status(200).json(resultado);
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+    }
 }
 
 module.exports = clienteController;
